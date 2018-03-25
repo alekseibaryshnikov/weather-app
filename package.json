@@ -9,7 +9,8 @@
   "author": "Aleksei Baryshnikov",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.85.0"
+    "request": "^2.85.0",
+    "yargs": "^11.0.0"
   },
   "devDependencies": {
     "eslint-config-standard": "^11.0.0",
