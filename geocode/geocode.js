@@ -1,8 +1,9 @@
 const request = require('request');
 
 const geocodeAddress = (address) => {
+    const encodedAddress = encodeURIComponent(address);
     request({
-        url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyAkfxWhTdwHBhTKM0TE834dNe0ocPz4PBE`,
+        url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=AIzaSyAkfxWhTdwHBhTKM0TE834dNe0ocPz4PBE`,
         json: true
     }, (err, res, body) => {
         if (err) {

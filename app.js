@@ -16,4 +16,4 @@ const argv = yargs
     .alias('help', 'h')
     .argv;
 
-geocode.geocodeAddress(encodeURIComponent(argv.address));
+geocode.geocodeAddress(argv.address);
