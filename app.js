@@ -16,4 +16,10 @@ const argv = yargs
     .alias('help', 'h')
     .argv;
 
-geocode.geocodeAddress(argv.address);
+geocode.geocodeAddress(argv.address, (err, res) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(JSON.stringify(res, undefined, 2));
+    }
+});
