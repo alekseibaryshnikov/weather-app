@@ -1,0 +1,21 @@
+{
+  "name": "waether-app",
+  "version": "0.0.1",
+  "description": "The weather application which work with Google Geocode API for detecting user place.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aleksei Baryshnikov",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.85.0"
+  },
+  "devDependencies": {
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
