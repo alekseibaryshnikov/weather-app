@@ -32,8 +32,8 @@ axios.get(geocodeUrl)
     .then((response) => {
         const currentlyTempreture = _temperatureConverter(response.data.currently.temperature);
         const apparentTemperature = _temperatureConverter(response.data.currently.apparentTemperature);
-        const apparenlty = response.data.currently.currently;   
-        console.log(`Now is ${currentlyTempreture} C. Apparent termperature is ${apparentTemperature} C. Summary: ${apparenlty}.`);
+        const summary = response.data.currently.summary;   
+        console.log(`Now is ${currentlyTempreture} C. Apparent termperature is ${apparentTemperature} C. Summary: ${summary}.`);
         console.log("\n--\n");
     })
     .catch((e) => {
