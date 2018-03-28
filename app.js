@@ -17,17 +17,19 @@ const argv = yargs
     .alias('help', 'h')
     .argv;
 
-geocode.geocodeAddress(argv.address, (addressErr, address) => {
-    if (addressErr) {
-        console.log(addressErr);
-    } else {
-        darksky.getCurrentWeather(address.latitude, address.longitude, (weatherErr, weather) => {
-            if (weatherErr) {
-                console.log(weatherErr);
-            } else {
+geocode.geocodeAddress(argv.address)
+    .then((address) => {
+        darksky.getCurrentWeather(address.latitude, address.longitude)
+            .then((weather) => {
+                console.log("\n--\n");
                 console.log(`Address: ${address.address}`);
                 console.log(`Now is ${weather.temperature.toFixed(2)} C. Apparent termperature is ${weather.apparentTemperature.toFixed(2)} C. Summary: ${weather.summary}.`);
-            }
-        });
-    }
-});
+                console.log("\n--\n");
+            })
+            .catch((weatherErr) => {
+                console.log(weatherErr);
+            });
+    })
+    .catch((addressErr) => {
+        console.log(addressErr);
+    });
